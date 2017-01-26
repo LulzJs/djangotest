@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from webservices.urls import router
 
 urlpatterns = [
     url(r'^', include('web.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^rest/', include(router.urls)),
 ]
